@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/Tiger-32x32.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/Tiger-32x32.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/Tiger-16x16.jpg">
   <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/blog/css/main.css">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="黑苹果 UDH630 核显 HDMI 输出黑屏解决的一点体会">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-01T00:11:50.000Z">
-<meta property="article:modified_time" content="2020-09-15T00:57:06.221Z">
+<meta property="article:modified_time" content="2020-10-20T06:59:50.058Z">
 <meta property="article:author" content="haona_li">
 <meta property="article:tag" content="黑苹果">
 <meta name="twitter:card" content="summary">
@@ -127,7 +127,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">18</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -137,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">23</span></a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">28</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -223,7 +223,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-15 08:57:06" itemprop="dateModified" datetime="2020-09-15T08:57:06+08:00">2020-09-15</time>
+                <time title="修改时间：2020-10-20 14:59:50" itemprop="dateModified" datetime="2020-10-20T14:59:50+08:00">2020-10-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -311,11 +311,18 @@
 <p>注意最后三行中的 <code>00040000</code>，代表接口类型为 <code>DP</code>，修改为 <code>00080000</code> 就是 <code>HDMI</code> 类型了。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ID: 0x3E9B0007, STOLEN: 57 MB, FBMEM: 0 bytes, VRAM: 1536 MB, Flags: 0x00801302</span><br><span class="line">TOTAL STOLEN: 58 MB, TOTAL CURSOR: 1 MB (1572864 bytes), MAX STOLEN: 172 MB, MAX OVERALL: 173 MB (181940224 bytes)</span><br><span class="line">Model name: Intel UHD Graphics 630</span><br><span class="line">Camelia: CameliaDisabled (0), Freq: 0 Hz, FreqMax: 0 Hz</span><br><span class="line">Mobile: 0, PipeCount: 3, PortCount: 3, FBMemoryCount: 3</span><br><span class="line">[1] busId: 0x05, pipe: 9, type: 0x00000400, flags: 0x000003C7 - ConnectorDP</span><br><span class="line">[2] busId: 0x04, pipe: 10, type: 0x00000400, flags: 0x000003C7 - ConnectorDP</span><br><span class="line">[3] busId: 0x06, pipe: 8, type: 0x00000400, flags: 0x000003C7 - ConnectorDP</span><br><span class="line">01050900 00040000 C7030000</span><br><span class="line">02040A00 00040000 C7030000</span><br><span class="line">03060800 00040000 C7030000</span><br></pre></td></tr></table></figure>
 
-<h2 id="禁用-AGDC"><a href="#禁用-AGDC" class="headerlink" title="禁用 AGDC"></a>禁用 <code>AGDC</code></h2><p>系统为 10.15.6 使用核显 UHD630 用于显示时，可能在启动到登陆界面时会黑屏。解决办法是“禁用 AGDC”。</p>
-<p>二选一</p>
+<h2 id="禁用-AGDC"><a href="#禁用-AGDC" class="headerlink" title="禁用 AGDC"></a><del>禁用 <code>AGDC</code></del></h2><p><del>系统为 10.15.6 使用核显 UHD630 用于显示时，可能在启动到登陆界面时会黑屏。解决办法是“禁用 AGDC”。</del></p>
+<p><del>二选一</del></p>
 <ul>
-<li>启动参数：<code>igfxagdc=0</code></li>
-<li>config.plist 文件中 <code>Devices</code>，<code>Propertise</code> 添加 <code>disable-agdc</code>，属性值为 <code>01000000</code>。</li>
+<li><del>启动参数：<code>igfxagdc=0</code></del></li>
+<li><del>config.plist 文件中 <code>Devices</code>，<code>Propertise</code> 添加 <code>disable-agdc</code>，属性值为 <code>01000000</code>。</del></li>
+</ul>
+<h2 id="启用-igfxonln-1"><a href="#启用-igfxonln-1" class="headerlink" title="启用 igfxonln=1"></a>启用 <code>igfxonln=1</code></h2><blockquote>
+<p>In macOS 10.15.4, there were some changes made to AGPM that can cause wake issues on Coffee Lake systems. Specifically displays hooked up to the iGPU would fail to wake. To resolve this:</p>
+</blockquote>
+<ul>
+<li>Add igfxonln=1 to boot-args</li>
+<li>Make sure you’re using WhateverGreen v1.3.8 or newer</li>
 </ul>
 <h2 id="配置总结"><a href="#配置总结" class="headerlink" title="配置总结"></a>配置总结</h2><p>根据以上所述，下表是配置总结</p>
 <table>
@@ -337,12 +344,12 @@
 <td align="left"><code>framebuffer-patch-enable</code></td>
 <td align="left"><code>01000000</code></td>
 <td align="left"><code>DATA</code></td>
-<td align="left"></td>
+<td align="left">帧缓冲总开关</td>
 </tr>
 <tr>
-<td align="left"><code>disable-agdc</code></td>
-<td align="left"><code>01000000</code></td>
-<td align="left"><code>DATA</code></td>
+<td align="left"><del><code>disable-agdc</code></del></td>
+<td align="left"><del><code>01000000</code></del></td>
+<td align="left"><del><code>DATA</code></del></td>
 <td align="left"></td>
 </tr>
 <tr>
@@ -485,7 +492,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#黑苹果-UDH630-核显-HDMI-输出黑屏解决的一点体会"><span class="nav-number">1.</span> <span class="nav-text">黑苹果 UDH630 核显 HDMI 输出黑屏解决的一点体会</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确定-ig-platform-id"><span class="nav-number">1.2.</span> <span class="nav-text">确定 ig-platform-id</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改接口类型为-HDMI"><span class="nav-number">1.3.</span> <span class="nav-text">修改接口类型为 HDMI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#禁用-AGDC"><span class="nav-number">1.4.</span> <span class="nav-text">禁用 AGDC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置总结"><span class="nav-number">1.5.</span> <span class="nav-text">配置总结</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#黑苹果-UDH630-核显-HDMI-输出黑屏解决的一点体会"><span class="nav-number">1.</span> <span class="nav-text">黑苹果 UDH630 核显 HDMI 输出黑屏解决的一点体会</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确定-ig-platform-id"><span class="nav-number">1.2.</span> <span class="nav-text">确定 ig-platform-id</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改接口类型为-HDMI"><span class="nav-number">1.3.</span> <span class="nav-text">修改接口类型为 HDMI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#禁用-AGDC"><span class="nav-number">1.4.</span> <span class="nav-text">禁用 AGDC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用-igfxonln-1"><span class="nav-number">1.5.</span> <span class="nav-text">启用 igfxonln&#x3D;1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置总结"><span class="nav-number">1.6.</span> <span class="nav-text">配置总结</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -501,7 +508,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -514,7 +521,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
